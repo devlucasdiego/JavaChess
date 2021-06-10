@@ -1,12 +1,14 @@
 package aplicacao;
 
+import chess.ChessPartida;
 import tabuleirogame.Tabuleiro;
 
 public class Programa {
 
 	public static void main(String[] args) {
 
-		Tabuleiro tabuleiro = new Tabuleiro(8, 8);
+		ChessPartida chessPartida = new ChessPartida();
+		UI.printTabuleiro(chessPartida.getPecas());
 	}
 
 }
