@@ -1,5 +1,8 @@
 package chess;
 
+import chess.pecas.Rei;
+import chess.pecas.Torre;
+import tabuleirogame.Posicao;
 import tabuleirogame.Tabuleiro;
 
 public class ChessPartida {
@@ -8,6 +11,7 @@ public class ChessPartida {
 
 	public ChessPartida() {
 		tabuleiro = new Tabuleiro(8, 8);
+		configInicial();
 	}
 
 	public ChessPeca[][] getPecas() {
@@ -18,5 +22,11 @@ public class ChessPartida {
 			}
 		}
 		return mat;
+	}
+
+	private void configInicial() {
+		tabuleiro.colocarPeca(new Torre(tabuleiro, Cor.WHITE), new Posicao(2, 1));
+		tabuleiro.colocarPeca(new Rei(tabuleiro, Cor.BLACK), new Posicao(0, 4));
+		tabuleiro.colocarPeca(new Rei(tabuleiro, Cor.WHITE), new Posicao(7, 4));
 	}
 }
